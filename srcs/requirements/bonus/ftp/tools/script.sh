@@ -2,10 +2,10 @@
 
 # Add a user and change its password
 
-adduser -D $FTP_USER -h /home/$FTP_USER/ftp/ ; echo "$FTP_USER:$FTP_PASSWORD" | chpasswd
-mkdir -p /home/$FTP_USER/ftp/
-chown -R $FTP_USER:$FTP_USER /home/$FTP_USER/ftp/
-chmod 777 /home/$FTP_USER/ftp/
+adduser -D $FTP_USER -h /var/www/html ; echo "$FTP_USER:$FTP_PASSWORD" | chpasswd
+mkdir -p /var/www/html
+chown -R $FTP_USER:$FTP_USER /var/www/html
+chmod 777 /var/www/html
 
 echo "
 listen=YES
