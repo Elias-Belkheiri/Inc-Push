@@ -21,6 +21,7 @@ volumes:
 
 services:
   mariadb:
+    image: mariadb
     build: ./requirements/mariadb
     container_name: mariadb
     hostname: mariadb
@@ -35,6 +36,7 @@ services:
       - inception
 
   wordpress:
+    image: wordpress
     build: ./requirements/wordpress
     container_name: wordpress
     restart: always
@@ -59,6 +61,7 @@ services:
       - WordPress:/var/www/html
 
   nginx:
+    image: nginx
     build: ./requirements/nginx
     container_name: nginx
     restart: always
@@ -75,6 +78,7 @@ services:
 
   # Bonus
   redis:
+    image: redis
     build: ./requirements/bonus/redis
     container_name: redis
     hostname: redis
@@ -85,6 +89,7 @@ services:
       - inception
 
   ftp:
+    image: ftp
     build: ./requirements/bonus/ftp
     hostname: ftp
     container_name: ftp
@@ -100,6 +105,7 @@ services:
       - inception
 
   static-website:
+    image: static-website
     build: ./requirements/bonus/static-website
     container_name: static-website
     restart: always
@@ -109,6 +115,7 @@ services:
       - inception
     
   adminer:
+    image: adminer
     build: ./requirements/bonus/adminer
     container_name: adminer
     hostname: adminer
@@ -119,6 +126,7 @@ services:
       - inception
 
   cadvisor:
+    image: cadvisor
     build: ./requirements/bonus/cadvisor
     container_name: cadvisor
     hostname: cadvisor
